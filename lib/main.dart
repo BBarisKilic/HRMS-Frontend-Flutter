@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/views/home/home_page.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
+import 'package:hrms_ui/views/welcome/welcome_page.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -17,9 +18,10 @@ class HRMSApp extends StatelessWidget {
         themeMode: ThemeMode.light,
         routes: {
           HomePage.id: (context) => HomePage(),
+          WelcomePage.id: (context) => WelcomePage(),
           LoginPage.id: (context) => LoginPage(),
         },
-        initialRoute: LoginPage.id,
+        initialRoute: WelcomePage.id,
       );
     });
   }
