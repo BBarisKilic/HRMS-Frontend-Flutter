@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/controllers/welcome_page_controller.dart';
+import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:sizer/sizer.dart';
 
@@ -41,7 +42,7 @@ class WelcomePagePhone extends StatelessWidget {
           child: Hero(
             tag: "human_resources",
             child: SvgPicture.asset(
-              "assets/images/human_resources.svg",
+              kHumanResourcesIconLocation,
               width: 80.w,
               color: const Color(0xff4d59c1),
             ),
@@ -58,7 +59,7 @@ class WelcomePagePhone extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            "HR Manager",
+            kAppTitle,
             style: TextStyle(
               color: Colors.white,
               fontSize: 24.sp,
@@ -69,7 +70,7 @@ class WelcomePagePhone extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            "Human Resources Management System",
+            kDescriptionText,
             style: TextStyle(
               color: Colors.white,
               fontSize: 12.sp,
@@ -89,7 +90,7 @@ class WelcomePagePhone extends StatelessWidget {
               backgroundColor: MaterialStateProperty.all(Colors.white),
             ),
             child: Text(
-              "Log in",
+              kLogInText,
               style: TextStyle(
                 color: const Color(0xff8286F4),
                 fontSize: 10.sp,
@@ -111,7 +112,7 @@ class WelcomePagePhone extends StatelessWidget {
               ),
             ),
             child: Text(
-              "Sign up",
+              kSignUpText,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 10.sp,

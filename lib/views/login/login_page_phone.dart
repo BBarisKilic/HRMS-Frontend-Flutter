@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/components/background_clipper.dart';
 import 'package:hrms_ui/controllers/login_page_controller.dart';
+import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:sizer/sizer.dart';
 
@@ -46,7 +47,7 @@ class LoginPagePhone extends StatelessWidget {
                     duration: Duration(seconds: 1),
                     opacity: _loginPageController.isFirstImageVisible ? 1 : 0,
                     child: SvgPicture.asset(
-                      "assets/images/headhunter.svg",
+                      kHeadhunterIconLocation,
                       height: 12.h,
                       color: const Color(0xff4d59c1),
                     ),
@@ -63,7 +64,7 @@ class LoginPagePhone extends StatelessWidget {
                     duration: Duration(seconds: 1),
                     opacity: _loginPageController.isFirstTextVisible ? 1 : 0,
                     child: Text(
-                      "welcome",
+                      kWelcomeText,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24.sp,
@@ -84,7 +85,7 @@ class LoginPagePhone extends StatelessWidget {
                       opacity:
                           _loginPageController.isSecondImageVisible ? 1 : 0,
                       child: SvgPicture.asset(
-                        "assets/images/recruitment.svg",
+                        kRecruitmentIconLocation,
                         height: 12.h,
                         color: const Color(0xff4d59c1),
                       ),
@@ -102,7 +103,7 @@ class LoginPagePhone extends StatelessWidget {
                     duration: Duration(seconds: 1),
                     opacity: _loginPageController.isSecondTextVisible ? 1 : 0,
                     child: Text(
-                      "back",
+                      kBackText,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24.sp,
@@ -124,7 +125,7 @@ class LoginPagePhone extends StatelessWidget {
                         opacity:
                             _loginPageController.isThirdImageVisible ? 1 : 0,
                         child: SvgPicture.asset(
-                          "assets/images/employee.svg",
+                          kEmployeeIconLocation,
                           height: 12.h,
                           color: const Color(0xff4d59c1),
                         ),
@@ -141,7 +142,7 @@ class LoginPagePhone extends StatelessWidget {
                 child: Hero(
                   tag: "human_resources",
                   child: SvgPicture.asset(
-                    "assets/images/human_resources.svg",
+                    kHumanResourcesIconLocation,
                     width: 12.h,
                     color: const Color(0xff4d59c1),
                   ),
