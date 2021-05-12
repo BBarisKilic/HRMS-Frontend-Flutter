@@ -15,17 +15,20 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     _loginPageController.startAnimation();
 
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        switch (sizingInformation.deviceScreenType) {
-          case DeviceScreenType.desktop:
-            return LoginPageDesktop();
-          case DeviceScreenType.tablet:
-            return LoginPageTablet();
-          default:
-            return LoginPagePhone();
-        }
-      },
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          switch (sizingInformation.deviceScreenType) {
+            case DeviceScreenType.desktop:
+              return LoginPageDesktop();
+            case DeviceScreenType.tablet:
+              return LoginPageTablet();
+            default:
+              return LoginPagePhone();
+          }
+        },
+      ),
     );
   }
 }
