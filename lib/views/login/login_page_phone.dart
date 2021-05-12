@@ -28,9 +28,9 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 4.h),
+                  padding: EdgeInsets.only(top: 6.h, left: 10.w),
                   child: Align(
-                    alignment: Alignment.topCenter,
+                    alignment: Alignment.topLeft,
                     child: SvgPicture.asset(
                       "assets/images/headhunter.svg",
                       height: 12.h,
@@ -39,7 +39,7 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  padding: EdgeInsets.only(bottom: 2.h, right: 10.w),
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: SvgPicture.asset(
@@ -50,7 +50,7 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10.w, bottom: 6.h),
+                  padding: EdgeInsets.only(bottom: 8.h, left: 10.w),
                   child: Row(
                     children: [
                       Align(
@@ -62,6 +62,20 @@ class LoginPagePhone extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 1.h, right: 10.w),
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Hero(
+                      tag: "human_resources",
+                      child: SvgPicture.asset(
+                        "assets/images/human_resources.svg",
+                        width: 12.h,
+                        color: const Color(0xff4d59c1),
+                      ),
+                    ),
                   ),
                 ),
               ],

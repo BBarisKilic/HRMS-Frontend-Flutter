@@ -38,10 +38,13 @@ class WelcomePagePhone extends StatelessWidget {
         return AnimatedOpacity(
           duration: const Duration(seconds: 1),
           opacity: _welcomePageController.isImageVisible ? 1 : 0,
-          child: SvgPicture.asset(
-            "assets/images/human_resources.svg",
-            width: 80.w,
-            color: const Color(0xff4d59c1),
+          child: Hero(
+            tag: "human_resources",
+            child: SvgPicture.asset(
+              "assets/images/human_resources.svg",
+              width: 80.w,
+              color: const Color(0xff4d59c1),
+            ),
           ),
         );
       }),
