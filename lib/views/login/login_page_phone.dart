@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/components/background_clipper.dart';
+import 'package:hrms_ui/controllers/login_page_controller.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPagePhone extends StatelessWidget {
+  final LoginPageController _loginPageController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +42,19 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                 ),
                 Padding(
+                  padding: EdgeInsets.only(top: 10.h, right: 10.w),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Text(
+                      "welcome",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24.sp,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
                   padding: EdgeInsets.only(bottom: 2.h, right: 10.w),
                   child: Align(
                     alignment: Alignment.centerRight,
@@ -46,6 +62,19 @@ class LoginPagePhone extends StatelessWidget {
                       "assets/images/recruitment.svg",
                       height: 12.h,
                       color: const Color(0xff4d59c1),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 2.h, left: 10.w),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "back",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24.sp,
+                      ),
                     ),
                   ),
                 ),
