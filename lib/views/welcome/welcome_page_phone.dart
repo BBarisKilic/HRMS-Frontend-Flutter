@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:hrms_ui/controllers/welcome_page_controller.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:sizer/sizer.dart';
 
 class WelcomePagePhone extends StatelessWidget {
+  final WelcomePageController _welcomePageController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +34,17 @@ class WelcomePagePhone extends StatelessWidget {
   Padding buildTopSide() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
-      child: SvgPicture.asset(
-        'assets/images/human_resources.svg',
-        width: 80.w,
-        color: const Color(0xff4d59c1),
-      ),
+      child: Obx(() {
+        return AnimatedOpacity(
+          duration: const Duration(seconds: 1),
+          opacity: _welcomePageController.isImageVisible ? 1 : 0,
+          child: SvgPicture.asset(
+            "assets/images/human_resources.svg",
+            width: 80.w,
+            color: const Color(0xff4d59c1),
+          ),
+        );
+      }),
     );
   }
 
@@ -49,7 +58,8 @@ class WelcomePagePhone extends StatelessWidget {
             "HR Manager",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 24.0.sp,
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(
@@ -59,7 +69,7 @@ class WelcomePagePhone extends StatelessWidget {
             "Human Resources Management System",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 10.0.sp,
+              fontSize: 12.sp,
             ),
           ),
           const SizedBox(
@@ -79,6 +89,8 @@ class WelcomePagePhone extends StatelessWidget {
               "Log in",
               style: TextStyle(
                 color: const Color(0xff8286F4),
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),
@@ -97,7 +109,11 @@ class WelcomePagePhone extends StatelessWidget {
             ),
             child: Text(
               "Sign up",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ],

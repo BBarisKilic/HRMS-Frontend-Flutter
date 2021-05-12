@@ -29,3 +29,10 @@ flutter:
   assets:
     - assets/images/
 
+  fonts:
+    - family: NanumGothicCoding
+      fonts:
+        - asset: assets/fonts/NanumGothicCoding-Regular.ttf
+        - asset: assets/fonts/NanumGothicCoding-Bold.ttf
+          weight: 700
+

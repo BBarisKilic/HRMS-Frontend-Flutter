@@ -16,6 +16,9 @@ class HRMSApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
+        theme: ThemeData(
+          fontFamily: 'NanumGothicCoding',
+        ),
         routes: {
           HomePage.id: (context) => HomePage(),
           WelcomePage.id: (context) => WelcomePage(),
