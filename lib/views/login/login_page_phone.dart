@@ -23,6 +23,7 @@ class LoginPagePhone extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {
+                    _loginPageController.reset();
                     Get.back();
                   },
                   icon: const Icon(
@@ -34,48 +35,76 @@ class LoginPagePhone extends StatelessWidget {
                   padding: EdgeInsets.only(top: 6.h, left: 10.w),
                   child: Align(
                     alignment: Alignment.topLeft,
-                    child: SvgPicture.asset(
-                      "assets/images/headhunter.svg",
-                      height: 12.h,
-                      color: const Color(0xff4d59c1),
-                    ),
+                    child: Obx(() {
+                      return AnimatedOpacity(
+                        duration: Duration(seconds: 1),
+                        opacity:
+                            _loginPageController.isFirstImageVisible ? 1 : 0,
+                        child: SvgPicture.asset(
+                          "assets/images/headhunter.svg",
+                          height: 12.h,
+                          color: const Color(0xff4d59c1),
+                        ),
+                      );
+                    }),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10.h, right: 10.w),
                   child: Align(
                     alignment: Alignment.topRight,
-                    child: Text(
-                      "welcome",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.sp,
-                      ),
-                    ),
+                    child: Obx(() {
+                      return AnimatedOpacity(
+                        duration: Duration(seconds: 1),
+                        opacity:
+                            _loginPageController.isFirstTextVisible ? 1 : 0,
+                        child: Text(
+                          "welcome",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24.sp,
+                          ),
+                        ),
+                      );
+                    }),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 2.h, right: 10.w),
                   child: Align(
                     alignment: Alignment.centerRight,
-                    child: SvgPicture.asset(
-                      "assets/images/recruitment.svg",
-                      height: 12.h,
-                      color: const Color(0xff4d59c1),
-                    ),
+                    child: Obx(() {
+                      return AnimatedOpacity(
+                        duration: Duration(seconds: 1),
+                        opacity:
+                            _loginPageController.isSecondImageVisible ? 1 : 0,
+                        child: SvgPicture.asset(
+                          "assets/images/recruitment.svg",
+                          height: 12.h,
+                          color: const Color(0xff4d59c1),
+                        ),
+                      );
+                    }),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 2.h, left: 10.w),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                      "back",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.sp,
-                      ),
-                    ),
+                    child: Obx(() {
+                      return AnimatedOpacity(
+                        duration: Duration(seconds: 1),
+                        opacity:
+                            _loginPageController.isSecondTextVisible ? 1 : 0,
+                        child: Text(
+                          "back",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24.sp,
+                          ),
+                        ),
+                      );
+                    }),
                   ),
                 ),
                 Padding(
@@ -84,11 +113,19 @@ class LoginPagePhone extends StatelessWidget {
                     children: [
                       Align(
                         alignment: Alignment.bottomLeft,
-                        child: SvgPicture.asset(
-                          "assets/images/employee.svg",
-                          height: 12.h,
-                          color: const Color(0xff4d59c1),
-                        ),
+                        child: Obx(() {
+                          return AnimatedOpacity(
+                            duration: Duration(seconds: 1),
+                            opacity: _loginPageController.isThirdImageVisible
+                                ? 1
+                                : 0,
+                            child: SvgPicture.asset(
+                              "assets/images/employee.svg",
+                              height: 12.h,
+                              color: const Color(0xff4d59c1),
+                            ),
+                          );
+                        }),
                       ),
                     ],
                   ),
