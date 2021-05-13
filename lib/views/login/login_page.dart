@@ -16,7 +16,10 @@ class LoginPage extends StatelessWidget {
     _loginPageController.startAnimation();
 
     return WillPopScope(
-      onWillPop: () => Future.value(false),
+      onWillPop: () {
+        Get.back();
+        return Future.value(true);
+      },
       child: ResponsiveBuilder(
         builder: (context, sizingInformation) {
           switch (sizingInformation.deviceScreenType) {

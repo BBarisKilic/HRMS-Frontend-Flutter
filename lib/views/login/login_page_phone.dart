@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/components/background_clipper.dart';
+import 'package:hrms_ui/components/login_signup_text_field.dart';
 import 'package:hrms_ui/controllers/login_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
+import 'package:hrms_ui/views/welcome/welcome_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPagePhone extends StatelessWidget {
@@ -37,16 +39,18 @@ class LoginPagePhone extends StatelessWidget {
               onPressed: () {
                 Get.back();
               },
-              icon: const Icon(
-                Icons.arrow_back_ios_rounded,
-                color: Colors.white,
-              ),
+              icon: GetPlatform.isMobile
+                  ? const Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Colors.white,
+                    )
+                  : SizedBox(),
             ),
           ),
           Obx(() {
             return AnimatedPositioned(
               duration: Duration(milliseconds: 500),
-              top: 12.h,
+              top: GetPlatform.isMobile ? 12.h : 4.h,
               left: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
                 kHumanResourcesIconLocation,
@@ -58,7 +62,7 @@ class LoginPagePhone extends StatelessWidget {
           Obx(() {
             return AnimatedPositioned(
               duration: Duration(milliseconds: 500),
-              top: 16.h,
+              top: GetPlatform.isMobile ? 16.h : 8.h,
               right: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
                 kHeadhunterIconLocation,
@@ -70,7 +74,7 @@ class LoginPagePhone extends StatelessWidget {
           Obx(() {
             return AnimatedPositioned(
               duration: Duration(milliseconds: 500),
-              top: 28.h,
+              top: GetPlatform.isMobile ? 28.h : 24.h,
               left: _loginPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
                 kWelcomeText,
@@ -85,7 +89,7 @@ class LoginPagePhone extends StatelessWidget {
           Obx(() {
             return AnimatedPositioned(
               duration: Duration(milliseconds: 500),
-              top: 34.h,
+              top: GetPlatform.isMobile ? 34.h : 30.h,
               right: _loginPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
                 kBackText,
@@ -132,35 +136,11 @@ class LoginPagePhone extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           children: [
-            TextField(
-              cursorColor: kPrimaryColor,
-              textAlignVertical: TextAlignVertical.center,
+            LoginSignupTextField(
               controller: _loginPageController.emailTextEditingController,
-              style: TextStyle(
-                color: kPrimaryDarkColor,
-                fontWeight: FontWeight.w700,
-              ),
-              decoration: const InputDecoration(
-                hintText: kEmailText,
-                hintStyle: TextStyle(color: kPrimaryColor),
-                prefixIcon: const Icon(
-                  Icons.mail_outline_rounded,
-                  color: kPrimaryColor,
-                ),
-                suffixIcon: const Icon(
-                  Icons.done,
-                  color: kPrimaryColor,
-                ),
-                enabledBorder: const UnderlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: kPrimaryColor, width: 0.0),
-                ),
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: kPrimaryColor, width: 0.0),
-                ),
-              ),
-            ),
+              suffixIcon: Icons.done,
+              prefixIcon: Icons.email_rounded,
+            )
           ],
         ),
       ),
