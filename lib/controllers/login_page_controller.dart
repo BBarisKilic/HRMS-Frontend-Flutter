@@ -1,36 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class LoginPageController extends GetxController {
-  var _isFirstImageVisible = false.obs;
-  var _isSecondImageVisible = false.obs;
-  var _isThirdImageVisible = false.obs;
-  var _isFirstTextVisible = false.obs;
-  var _isSecondTextVisible = false.obs;
+  var _didAnimationStart = false.obs;
 
-  bool get isFirstImageVisible => _isFirstImageVisible.value;
-  bool get isSecondImageVisible => _isSecondImageVisible.value;
-  bool get isThirdImageVisible => _isThirdImageVisible.value;
-  bool get isFirstTextVisible => _isFirstTextVisible.value;
-  bool get isSecondTextVisible => _isSecondTextVisible.value;
+  var _emailTextEditingController = TextEditingController();
+  var _passwordTextEditingController = TextEditingController();
 
-  void startAnimation() {
-    Future.delayed(
-        Duration(milliseconds: 250), () => _isFirstImageVisible.value = true);
-    Future.delayed(
-        Duration(milliseconds: 500), () => _isSecondImageVisible.value = true);
-    Future.delayed(
-        Duration(milliseconds: 750), () => _isThirdImageVisible.value = true);
-    Future.delayed(
-        Duration(milliseconds: 1250), () => _isFirstTextVisible.value = true);
-    Future.delayed(
-        Duration(milliseconds: 1500), () => _isSecondTextVisible.value = true);
+  get didAnimationStart => _didAnimationStart.value;
+  get emailTextEditingController => _emailTextEditingController;
+  get passwordTextEditingController => _passwordTextEditingController;
+
+  void startAnimation() async {
+    Future.delayed(Duration(milliseconds: 250), () {
+      _didAnimationStart.value = true;
+    });
   }
 
-  void reset() {
-    _isFirstImageVisible.value = false;
-    _isSecondImageVisible.value = false;
-    _isThirdImageVisible.value = false;
-    _isFirstTextVisible.value = false;
-    _isSecondTextVisible.value = false;
+  @override
+  void onClose() {
+    _emailTextEditingController.dispose();
+    _passwordTextEditingController.dispose();
+    super.onClose();
   }
 }

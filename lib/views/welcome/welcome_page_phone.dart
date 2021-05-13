@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:hrms_ui/components/welcome_button.dart';
 import 'package:hrms_ui/controllers/welcome_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
@@ -12,21 +13,25 @@ class WelcomePagePhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: 100.h,
-        width: 100.w,
-        color: const Color(0xff8286F4),
-        child: Column(
-          children: [
-            Expanded(
-              flex: 6,
-              child: buildTopSide(),
-            ),
-            Expanded(
-              flex: 4,
-              child: buildBottomSide(),
-            ),
-          ],
+      backgroundColor: kPrimaryColor,
+      body: SafeArea(
+        child: Container(
+          height: 100.h,
+          width: 100.w,
+          color: kPrimaryColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 6,
+                child: buildTopSide(),
+              ),
+              Expanded(
+                flex: 4,
+                child: buildBottomSide(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -35,20 +40,22 @@ class WelcomePagePhone extends StatelessWidget {
   Padding buildTopSide() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
-      child: Obx(() {
-        return AnimatedOpacity(
-          duration: const Duration(seconds: 1),
-          opacity: _welcomePageController.isImageVisible ? 1 : 0,
-          child: Hero(
-            tag: "human_resources",
-            child: SvgPicture.asset(
-              kHumanResourcesIconLocation,
-              width: 80.w,
-              color: const Color(0xff4d59c1),
+      child: Obx(
+        () {
+          return AnimatedOpacity(
+            duration: const Duration(seconds: 1),
+            opacity: _welcomePageController.isImageVisible ? 1 : 0,
+            child: Hero(
+              tag: "human_resources",
+              child: SvgPicture.asset(
+                kHumanResourcesIconLocation,
+                width: 80.w,
+                color: const Color(0xff4d59c1),
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 
@@ -56,69 +63,52 @@ class WelcomePagePhone extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            kAppTitle,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            kDescriptionText,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 12.sp,
-            ),
-          ),
-          const SizedBox(
-            height: 60.0,
-          ),
-          TextButton(
-            onPressed: () {
-              Get.toNamed(LoginPage.id);
-            },
-            style: ButtonStyle(
-              padding: MaterialStateProperty.all(
-                const EdgeInsets.symmetric(vertical: 20.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                kAppTitle,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-              backgroundColor: MaterialStateProperty.all(Colors.white),
-            ),
-            child: Text(
-              kLogInText,
-              style: TextStyle(
-                color: const Color(0xff8286F4),
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w700,
+              const SizedBox(
+                height: 10.0,
               ),
-            ),
+              Text(
+                kDescriptionText,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12.sp,
+                ),
+              ),
+            ],
           ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              padding: MaterialStateProperty.all(
-                const EdgeInsets.symmetric(vertical: 20.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              WelcomeButton(
+                onPressed: () => Get.toNamed(LoginPage.id),
+                buttonColor: Colors.white,
+                borderColor: Colors.white,
+                textColor: kPrimaryColor,
+                text: kLogInText,
               ),
-              side: MaterialStateProperty.all(
-                BorderSide(color: Colors.white),
+              const SizedBox(
+                height: 20.0,
               ),
-            ),
-            child: Text(
-              kSignUpText,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w700,
+              WelcomeButton(
+                onPressed: () {},
+                buttonColor: kPrimaryColor,
+                borderColor: Colors.white,
+                textColor: Colors.white,
+                text: kSignUpText,
               ),
-            ),
+            ],
           ),
         ],
       ),

@@ -13,9 +13,14 @@ class LoginPagePhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ClipPath(
-        clipper: BackgroundClipper(LoginPage.id),
-        child: buildTopSide(),
+      body: Column(
+        children: [
+          ClipPath(
+            clipper: BackgroundClipper(LoginPage.id),
+            child: buildTopSide(),
+          ),
+          buildBottomSide(),
+        ],
       ),
     );
   }
@@ -24,13 +29,12 @@ class LoginPagePhone extends StatelessWidget {
     return Container(
       height: 60.h,
       width: 100.w,
-      color: const Color(0xff8286F4),
-      child: SafeArea(
-        child: Stack(
-          children: [
-            IconButton(
+      color: kPrimaryColor,
+      child: Stack(
+        children: [
+          SafeArea(
+            child: IconButton(
               onPressed: () {
-                _loginPageController.reset();
                 Get.back();
               },
               icon: const Icon(
@@ -38,114 +42,122 @@ class LoginPagePhone extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 6.h, left: 10.w),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Obx(() {
-                  return AnimatedOpacity(
-                    duration: Duration(seconds: 1),
-                    opacity: _loginPageController.isFirstImageVisible ? 1 : 0,
-                    child: SvgPicture.asset(
-                      kHeadhunterIconLocation,
-                      height: 12.h,
-                      color: const Color(0xff4d59c1),
-                    ),
-                  );
-                }),
+          ),
+          Obx(() {
+            return AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              top: 12.h,
+              left: _loginPageController.didAnimationStart ? 10.w : -20.w,
+              child: SvgPicture.asset(
+                kHumanResourcesIconLocation,
+                width: 22.w,
+                color: kPrimaryDarkColor,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 10.h, right: 10.w),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Obx(() {
-                  return AnimatedOpacity(
-                    duration: Duration(seconds: 1),
-                    opacity: _loginPageController.isFirstTextVisible ? 1 : 0,
-                    child: Text(
-                      kWelcomeText,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.sp,
-                      ),
-                    ),
-                  );
-                }),
+            );
+          }),
+          Obx(() {
+            return AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              top: 16.h,
+              right: _loginPageController.didAnimationStart ? 10.w : -20.w,
+              child: SvgPicture.asset(
+                kHeadhunterIconLocation,
+                width: 22.w,
+                color: kPrimaryDarkColor,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 2.h, right: 10.w),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Obx(
-                  () {
-                    return AnimatedOpacity(
-                      duration: Duration(seconds: 1),
-                      opacity:
-                          _loginPageController.isSecondImageVisible ? 1 : 0,
-                      child: SvgPicture.asset(
-                        kRecruitmentIconLocation,
-                        height: 12.h,
-                        color: const Color(0xff4d59c1),
-                      ),
-                    );
-                  },
+            );
+          }),
+          Obx(() {
+            return AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              top: 28.h,
+              left: _loginPageController.didAnimationStart ? 30.w : -20.w,
+              child: Text(
+                kWelcomeText,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 2.h, left: 10.w),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Obx(() {
-                  return AnimatedOpacity(
-                    duration: Duration(seconds: 1),
-                    opacity: _loginPageController.isSecondTextVisible ? 1 : 0,
-                    child: Text(
-                      kBackText,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.sp,
-                      ),
-                    ),
-                  );
-                }),
+            );
+          }),
+          Obx(() {
+            return AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              top: 34.h,
+              right: _loginPageController.didAnimationStart ? 30.w : -20.w,
+              child: Text(
+                kBackText,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.h, left: 10.w),
-              child: Row(
-                children: [
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Obx(() {
-                      return AnimatedOpacity(
-                        duration: Duration(seconds: 1),
-                        opacity:
-                            _loginPageController.isThirdImageVisible ? 1 : 0,
-                        child: SvgPicture.asset(
-                          kEmployeeIconLocation,
-                          height: 12.h,
-                          color: const Color(0xff4d59c1),
-                        ),
-                      );
-                    }),
-                  ),
-                ],
+            );
+          }),
+          Obx(() {
+            return AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              bottom: 9.h,
+              left: _loginPageController.didAnimationStart ? 10.w : -20.w,
+              child: SvgPicture.asset(
+                kRecruitmentIconLocation,
+                width: 22.w,
+                color: kPrimaryDarkColor,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 1.h, right: 10.w),
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Hero(
-                  tag: "human_resources",
-                  child: SvgPicture.asset(
-                    kHumanResourcesIconLocation,
-                    width: 12.h,
-                    color: const Color(0xff4d59c1),
-                  ),
+            );
+          }),
+          Obx(() {
+            return AnimatedPositioned(
+              duration: Duration(milliseconds: 500),
+              bottom: 5.h,
+              right: _loginPageController.didAnimationStart ? 10.w : -20.w,
+              child: SvgPicture.asset(
+                kEmployeeIconLocation,
+                width: 22.w,
+                color: kPrimaryDarkColor,
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  SafeArea buildBottomSide() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: Column(
+          children: [
+            TextField(
+              cursorColor: kPrimaryColor,
+              textAlignVertical: TextAlignVertical.center,
+              controller: _loginPageController.emailTextEditingController,
+              style: TextStyle(
+                color: kPrimaryDarkColor,
+                fontWeight: FontWeight.w700,
+              ),
+              decoration: const InputDecoration(
+                hintText: kEmailText,
+                hintStyle: TextStyle(color: kPrimaryColor),
+                prefixIcon: const Icon(
+                  Icons.mail_outline_rounded,
+                  color: kPrimaryColor,
+                ),
+                suffixIcon: const Icon(
+                  Icons.done,
+                  color: kPrimaryColor,
+                ),
+                enabledBorder: const UnderlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: kPrimaryColor, width: 0.0),
+                ),
+                focusedBorder: const UnderlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: kPrimaryColor, width: 0.0),
                 ),
               ),
             ),
