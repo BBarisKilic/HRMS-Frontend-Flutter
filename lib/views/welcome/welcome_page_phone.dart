@@ -60,52 +60,49 @@ class WelcomePagePhone extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                kAppTitle,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Text(
-                kDescriptionText,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12.sp,
-                ),
-              ),
-            ],
+          Spacer(
+            flex: 2,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              WelcomeButton(
-                onPressed: () => Get.toNamed(LoginPage.id),
-                buttonColor: Colors.white,
-                borderColor: Colors.white,
-                textColor: kPrimaryColor,
-                text: kLogInText,
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              WelcomeButton(
-                onPressed: () {},
-                buttonColor: kPrimaryColor,
-                borderColor: Colors.white,
-                textColor: Colors.white,
-                text: kSignUpText,
-              ),
-            ],
+          Text(
+            kAppTitle,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Spacer(),
+          Text(
+            kDescriptionText,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12.sp,
+            ),
+          ),
+          Spacer(
+            flex: 6,
+          ),
+          WelcomeButton(
+            onPressed: () => Get.toNamed(LoginPage.id),
+            buttonColor: Colors.white,
+            borderColor: Colors.white,
+            textColor: kPrimaryColor,
+            text: kLogInText,
+          ),
+          Spacer(
+            flex: 2,
+          ),
+          WelcomeButton(
+            onPressed: () {},
+            buttonColor: kPrimaryColor,
+            borderColor: Colors.white,
+            textColor: Colors.white,
+            text: kSignUpText,
+          ),
+          Spacer(
+            flex: 2,
           ),
         ],
       ),

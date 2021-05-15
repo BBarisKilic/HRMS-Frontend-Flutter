@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/home/home_page.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:hrms_ui/views/welcome/welcome_page.dart';
@@ -18,6 +19,8 @@ class HRMSApp extends StatelessWidget {
         themeMode: ThemeMode.light,
         theme: ThemeData(
           fontFamily: 'NanumGothicCoding',
+          primaryColor: kPrimaryColor,
+          primaryColorDark: kPrimaryDarkColor,
         ),
         getPages: [
           GetPage(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hrms_ui/utils/constants.dart';
+import 'package:sizer/sizer.dart';
 
 class LoginSignupTextField extends StatelessWidget {
   LoginSignupTextField({
@@ -20,26 +21,26 @@ class LoginSignupTextField extends StatelessWidget {
       cursorColor: kPrimaryColor,
       textAlignVertical: TextAlignVertical.center,
       controller: controller,
+      autofocus: true,
       style: TextStyle(
         color: kPrimaryDarkColor,
         fontWeight: FontWeight.w700,
+        fontSize: 12.sp,
       ),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: kPrimaryColor),
+        hintStyle: TextStyle(fontSize: 12.sp),
         prefixIcon: Icon(
           prefixIcon,
-          color: kPrimaryColor,
         ),
         suffixIcon: Icon(
           suffixIcon,
-          color: kPrimaryColor,
         ),
         enabledBorder: const UnderlineInputBorder(
-          borderSide: const BorderSide(color: kPrimaryColor, width: 0.0),
+          borderSide: const BorderSide(width: 0.0),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: const BorderSide(color: kPrimaryColor, width: 0.0),
+          borderSide: const BorderSide(width: 0.0),
         ),
       ),
     );

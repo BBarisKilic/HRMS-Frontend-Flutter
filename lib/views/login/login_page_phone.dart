@@ -3,10 +3,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/components/background_clipper.dart';
 import 'package:hrms_ui/components/login_signup_text_field.dart';
+import 'package:hrms_ui/components/welcome_button.dart';
 import 'package:hrms_ui/controllers/login_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
-import 'package:hrms_ui/views/welcome/welcome_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPagePhone extends StatelessWidget {
@@ -35,6 +35,7 @@ class LoginPagePhone extends StatelessWidget {
       child: Stack(
         children: [
           SafeArea(
+            bottom: false,
             child: IconButton(
               onPressed: () {
                 Get.back();
@@ -130,25 +131,93 @@ class LoginPagePhone extends StatelessWidget {
     );
   }
 
-  SafeArea buildBottomSide() {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child: Column(
-          children: [
-            LoginSignupTextField(
-              controller: _loginPageController.emailTextEditingController,
-              hintText: kEmailText,
-              suffixIcon: Icons.done,
-              prefixIcon: Icons.email_rounded,
-            ),
-            LoginSignupTextField(
-              controller: _loginPageController.passwordTextEditingController,
-              hintText: kPasswordText,
-              suffixIcon: Icons.visibility_off_outlined,
-              prefixIcon: Icons.lock_rounded,
-            ),
-          ],
+  Padding buildBottomSide() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: SizedBox(
+        height: 40.h,
+        width: 100.w,
+        child: SafeArea(
+          top: false,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              LoginSignupTextField(
+                controller: _loginPageController.emailTextEditingController,
+                hintText: kEmailText,
+                suffixIcon: Icons.done,
+                prefixIcon: Icons.email_rounded,
+              ),
+              Spacer(),
+              LoginSignupTextField(
+                controller: _loginPageController.passwordTextEditingController,
+                hintText: kPasswordText,
+                suffixIcon: Icons.visibility_off_outlined,
+                prefixIcon: Icons.lock_rounded,
+              ),
+              Spacer(),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: kPrimaryColor,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12.sp,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              Spacer(
+                flex: 4,
+              ),
+              WelcomeButton(
+                text: kLogInText,
+                onPressed: () {},
+                textColor: Colors.white,
+                buttonColor: kPrimaryColor,
+                borderColor: kPrimaryColor,
+              ),
+              Spacer(),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      height: 1,
+                      color: Colors.black54,
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "or",
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 12.sp,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      height: 1,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+              Spacer(),
+              WelcomeButton(
+                text: kSignUpText,
+                onPressed: () {},
+                textColor: Colors.black54,
+                buttonColor: Colors.white,
+                borderColor: Colors.black54,
+              ),
+              Spacer(),
+            ],
+          ),
         ),
       ),
     );
