@@ -27,3 +27,6 @@ const String kNationalIdText = "National Identity Number";
 const String kYearOfBirthText = "Year of Birth";
 const String kIndividualText = "Individual";
 const String kCompany = "Company";
+const String kCompanyNameText = "Company Name";
+const String kWebsiteText = "Website";
+const String kPhoneText = "Phone";

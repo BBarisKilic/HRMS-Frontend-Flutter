@@ -121,60 +121,8 @@ class SignupPagePhone extends StatelessWidget {
                     ),
                     body: TabBarView(
                       children: [
-                        Column(
-                          children: [
-                            Spacer(),
-                            LoginSignupTextField(
-                              controller: _signupPageController
-                                  .emailTextEditingController,
-                              hintText: kEmailText,
-                              suffixIcon: null,
-                              prefixIcon: Icons.email_rounded,
-                            ),
-                            Spacer(),
-                            LoginSignupTextField(
-                              controller: _signupPageController
-                                  .passwordTextEditingController,
-                              hintText: kPasswordText,
-                              suffixIcon: Icons.visibility_off_outlined,
-                              prefixIcon: Icons.lock_rounded,
-                            ),
-                            Spacer(),
-                            LoginSignupTextField(
-                              controller: _signupPageController
-                                  .passwordTextEditingController,
-                              hintText: kFirstNameText,
-                              suffixIcon: null,
-                              prefixIcon: Icons.person_outline,
-                            ),
-                            Spacer(),
-                            LoginSignupTextField(
-                              controller: _signupPageController
-                                  .passwordTextEditingController,
-                              hintText: kLastNameText,
-                              suffixIcon: null,
-                              prefixIcon: Icons.person,
-                            ),
-                            Spacer(),
-                            LoginSignupTextField(
-                              controller: _signupPageController
-                                  .passwordTextEditingController,
-                              hintText: kNationalIdText,
-                              suffixIcon: null,
-                              prefixIcon: FontAwesomeIcons.idCard,
-                            ),
-                            Spacer(),
-                            LoginSignupTextField(
-                              controller: _signupPageController
-                                  .passwordTextEditingController,
-                              hintText: kYearOfBirthText,
-                              suffixIcon: null,
-                              prefixIcon: Icons.date_range_rounded,
-                            ),
-                            Spacer(),
-                          ],
-                        ),
-                        Text("asdasd"),
+                        buildIndividualSignUpForm(),
+                        buildCompanySignUpForm(),
                       ],
                     ),
                   ),
@@ -232,6 +180,102 @@ class SignupPagePhone extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Column buildIndividualSignUpForm() {
+    return Column(
+      children: [
+        Spacer(),
+        LoginSignupTextField(
+          controller:
+              _signupPageController.emailIndividualTextEditingController,
+          hintText: kEmailText,
+          suffixIcon: null,
+          prefixIcon: Icons.email_rounded,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller:
+              _signupPageController.passwordIndividualTextEditingController,
+          hintText: kPasswordText,
+          suffixIcon: Icons.visibility_off_outlined,
+          prefixIcon: Icons.lock_rounded,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.firstNameTextEditingController,
+          hintText: kFirstNameText,
+          suffixIcon: null,
+          prefixIcon: Icons.person_outline,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.lastNameTextEditingController,
+          hintText: kLastNameText,
+          suffixIcon: null,
+          prefixIcon: Icons.person,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.nationalIdTextEditingController,
+          hintText: kNationalIdText,
+          suffixIcon: null,
+          prefixIcon: FontAwesomeIcons.idCard,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.yearOfBirthTextEditingController,
+          hintText: kYearOfBirthText,
+          suffixIcon: null,
+          prefixIcon: Icons.date_range_rounded,
+        ),
+        Spacer(),
+      ],
+    );
+  }
+
+  Column buildCompanySignUpForm() {
+    return Column(
+      children: [
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.emailCompanyTextEditingController,
+          hintText: kEmailText,
+          suffixIcon: null,
+          prefixIcon: Icons.email_rounded,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller:
+              _signupPageController.passwordCompanyTextEditingController,
+          hintText: kPasswordText,
+          suffixIcon: Icons.visibility_off_outlined,
+          prefixIcon: Icons.lock_rounded,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.companyNameTextEditingController,
+          hintText: kCompanyNameText,
+          suffixIcon: null,
+          prefixIcon: Icons.title,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.websiteTextEditingController,
+          hintText: kWebsiteText,
+          suffixIcon: null,
+          prefixIcon: Icons.web,
+        ),
+        Spacer(),
+        LoginSignupTextField(
+          controller: _signupPageController.phoneTextEditingController,
+          hintText: kPhoneText,
+          suffixIcon: null,
+          prefixIcon: Icons.phone,
+        ),
+        Spacer(),
+      ],
     );
   }
 }
