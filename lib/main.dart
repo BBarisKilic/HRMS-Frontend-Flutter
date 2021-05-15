@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/home/home_page.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
+import 'package:hrms_ui/views/signup/signup_page.dart';
 import 'package:hrms_ui/views/welcome/welcome_page.dart';
 import 'package:sizer/sizer.dart';
 
@@ -38,6 +39,12 @@ class HRMSApp extends StatelessWidget {
           GetPage(
             name: LoginPage.id,
             page: () => LoginPage(),
+            transition: Transition.fadeIn,
+            transitionDuration: Duration(milliseconds: 500),
+          ),
+          GetPage(
+            name: SignupPage.id,
+            page: () => SignupPage(),
             transition: Transition.fadeIn,
             transitionDuration: Duration(milliseconds: 500),
           ),

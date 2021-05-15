@@ -7,7 +7,7 @@ import 'package:hrms_ui/views/welcome/welcome_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class WelcomePage extends StatelessWidget {
-  static const String id = '/welcome';
+  static const String id = "/welcome";
 
   final _welcomePageController = Get.put(WelcomePageController());
 

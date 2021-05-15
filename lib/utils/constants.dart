@@ -19,3 +19,5 @@ const String kWelcomeText = "Welcome";
 const String kBackText = "Back";
 const String kEmailText = "Email";
 const String kPasswordText = "Password";
+const String kCreateText = "Create";
+const String kAccountText = "Account";

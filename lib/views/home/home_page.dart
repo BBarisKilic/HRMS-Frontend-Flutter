@@ -5,7 +5,7 @@ import 'package:hrms_ui/views/home/home_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomePage extends StatelessWidget {
-  static const String id = '/';
+  static const String id = "/";
 
   @override
   Widget build(BuildContext context) {

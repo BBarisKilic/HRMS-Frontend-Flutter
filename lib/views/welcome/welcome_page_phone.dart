@@ -5,6 +5,7 @@ import 'package:hrms_ui/components/welcome_button.dart';
 import 'package:hrms_ui/controllers/welcome_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
+import 'package:hrms_ui/views/signup/signup_page.dart';
 import 'package:sizer/sizer.dart';
 
 class WelcomePagePhone extends StatelessWidget {
@@ -95,14 +96,14 @@ class WelcomePagePhone extends StatelessWidget {
             flex: 2,
           ),
           WelcomeButton(
-            onPressed: () {},
+            onPressed: () => Get.toNamed(SignupPage.id),
             buttonColor: kPrimaryColor,
             borderColor: Colors.white,
             textColor: Colors.white,
             text: kSignUpText,
           ),
           Spacer(
-            flex: 2,
+            flex: 3,
           ),
         ],
       ),
