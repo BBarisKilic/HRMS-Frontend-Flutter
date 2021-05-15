@@ -138,9 +138,16 @@ class LoginPagePhone extends StatelessWidget {
           children: [
             LoginSignupTextField(
               controller: _loginPageController.emailTextEditingController,
+              hintText: kEmailText,
               suffixIcon: Icons.done,
               prefixIcon: Icons.email_rounded,
-            )
+            ),
+            LoginSignupTextField(
+              controller: _loginPageController.passwordTextEditingController,
+              hintText: kPasswordText,
+              suffixIcon: Icons.visibility_off_outlined,
+              prefixIcon: Icons.lock_rounded,
+            ),
           ],
         ),
       ),

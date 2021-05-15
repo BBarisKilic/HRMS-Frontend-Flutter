@@ -4,11 +4,13 @@ import 'package:hrms_ui/utils/constants.dart';
 class LoginSignupTextField extends StatelessWidget {
   LoginSignupTextField({
     required this.controller,
+    required this.hintText,
     required this.prefixIcon,
     required this.suffixIcon,
   });
 
   final TextEditingController controller;
+  final String hintText;
   final IconData prefixIcon;
   final IconData suffixIcon;
 
@@ -23,7 +25,7 @@ class LoginSignupTextField extends StatelessWidget {
         fontWeight: FontWeight.w700,
       ),
       decoration: InputDecoration(
-        hintText: kEmailText,
+        hintText: hintText,
         hintStyle: TextStyle(color: kPrimaryColor),
         prefixIcon: Icon(
           prefixIcon,
