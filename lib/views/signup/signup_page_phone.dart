@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:hrms_ui/components/background_clipper.dart';
 import 'package:hrms_ui/components/login_signup_text_field.dart';
@@ -29,7 +29,7 @@ class SignupPagePhone extends StatelessWidget {
 
   Container buildTopSide() {
     return Container(
-      height: 60.h,
+      height: 25.h,
       width: 100.w,
       color: kPrimaryColor,
       child: Stack(
@@ -51,31 +51,7 @@ class SignupPagePhone extends StatelessWidget {
           Obx(() {
             return AnimatedPositioned(
               duration: Duration(milliseconds: 500),
-              top: GetPlatform.isMobile ? 12.h : 4.h,
-              left: _signupPageController.didAnimationStart ? 10.w : -20.w,
-              child: SvgPicture.asset(
-                kHumanResourcesIconLocation,
-                width: 22.w,
-                color: kPrimaryDarkColor,
-              ),
-            );
-          }),
-          Obx(() {
-            return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
-              top: GetPlatform.isMobile ? 16.h : 8.h,
-              right: _signupPageController.didAnimationStart ? 10.w : -20.w,
-              child: SvgPicture.asset(
-                kHeadhunterIconLocation,
-                width: 22.w,
-                color: kPrimaryDarkColor,
-              ),
-            );
-          }),
-          Obx(() {
-            return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
-              top: GetPlatform.isMobile ? 28.h : 24.h,
+              top: GetPlatform.isMobile ? 10.h : 2.h,
               left: _signupPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
                 kCreateText,
@@ -90,7 +66,7 @@ class SignupPagePhone extends StatelessWidget {
           Obx(() {
             return AnimatedPositioned(
               duration: Duration(milliseconds: 500),
-              top: GetPlatform.isMobile ? 34.h : 30.h,
+              top: GetPlatform.isMobile ? 16.h : 8.h,
               right: _signupPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
                 kAccountText,
@@ -99,30 +75,6 @@ class SignupPagePhone extends StatelessWidget {
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w700,
                 ),
-              ),
-            );
-          }),
-          Obx(() {
-            return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
-              bottom: 9.h,
-              left: _signupPageController.didAnimationStart ? 10.w : -20.w,
-              child: SvgPicture.asset(
-                kRecruitmentIconLocation,
-                width: 22.w,
-                color: kPrimaryDarkColor,
-              ),
-            );
-          }),
-          Obx(() {
-            return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
-              bottom: 5.h,
-              right: _signupPageController.didAnimationStart ? 10.w : -20.w,
-              child: SvgPicture.asset(
-                kEmployeeIconLocation,
-                width: 22.w,
-                color: kPrimaryDarkColor,
               ),
             );
           }),
@@ -135,36 +87,96 @@ class SignupPagePhone extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: SizedBox(
-        height: 40.h,
+        height: 75.h,
         width: 100.w,
         child: SafeArea(
           top: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              LoginSignupTextField(
-                controller: _signupPageController.emailTextEditingController,
-                hintText: kEmailText,
-                suffixIcon: Icons.done,
-                prefixIcon: Icons.email_rounded,
-              ),
-              Spacer(),
-              LoginSignupTextField(
-                controller: _signupPageController.passwordTextEditingController,
-                hintText: kPasswordText,
-                suffixIcon: Icons.visibility_off_outlined,
-                prefixIcon: Icons.lock_rounded,
-              ),
-              Spacer(),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12.sp,
-                    decoration: TextDecoration.underline,
+              Container(
+                height: 50.h,
+                child: DefaultTabController(
+                  length: 2,
+                  child: Scaffold(
+                    appBar: TabBar(
+                      indicatorColor: kPrimaryColor,
+                      labelColor: kPrimaryColor,
+                      unselectedLabelColor: Colors.black54,
+                      labelStyle: TextStyle(fontSize: 12.sp),
+                      tabs: [
+                        Tab(
+                          icon: Icon(
+                            Icons.person_pin_sharp,
+                          ),
+                          text: kIndividualText,
+                        ),
+                        Tab(
+                          icon: Icon(
+                            FontAwesomeIcons.building,
+                          ),
+                          text: kCompany,
+                        ),
+                      ],
+                    ),
+                    body: TabBarView(
+                      children: [
+                        Column(
+                          children: [
+                            Spacer(),
+                            LoginSignupTextField(
+                              controller: _signupPageController
+                                  .emailTextEditingController,
+                              hintText: kEmailText,
+                              suffixIcon: null,
+                              prefixIcon: Icons.email_rounded,
+                            ),
+                            Spacer(),
+                            LoginSignupTextField(
+                              controller: _signupPageController
+                                  .passwordTextEditingController,
+                              hintText: kPasswordText,
+                              suffixIcon: Icons.visibility_off_outlined,
+                              prefixIcon: Icons.lock_rounded,
+                            ),
+                            Spacer(),
+                            LoginSignupTextField(
+                              controller: _signupPageController
+                                  .passwordTextEditingController,
+                              hintText: kFirstNameText,
+                              suffixIcon: null,
+                              prefixIcon: Icons.person_outline,
+                            ),
+                            Spacer(),
+                            LoginSignupTextField(
+                              controller: _signupPageController
+                                  .passwordTextEditingController,
+                              hintText: kLastNameText,
+                              suffixIcon: null,
+                              prefixIcon: Icons.person,
+                            ),
+                            Spacer(),
+                            LoginSignupTextField(
+                              controller: _signupPageController
+                                  .passwordTextEditingController,
+                              hintText: kNationalIdText,
+                              suffixIcon: null,
+                              prefixIcon: FontAwesomeIcons.idCard,
+                            ),
+                            Spacer(),
+                            LoginSignupTextField(
+                              controller: _signupPageController
+                                  .passwordTextEditingController,
+                              hintText: kYearOfBirthText,
+                              suffixIcon: null,
+                              prefixIcon: Icons.date_range_rounded,
+                            ),
+                            Spacer(),
+                          ],
+                        ),
+                        Text("asdasd"),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -172,7 +184,7 @@ class SignupPagePhone extends StatelessWidget {
                 flex: 4,
               ),
               WelcomeButton(
-                text: kLogInText,
+                text: kSignUpText,
                 onPressed: () {},
                 textColor: Colors.white,
                 buttonColor: kPrimaryColor,
@@ -209,7 +221,7 @@ class SignupPagePhone extends StatelessWidget {
               ),
               Spacer(),
               WelcomeButton(
-                text: kSignUpText,
+                text: kLogInText,
                 onPressed: () {},
                 textColor: Colors.black54,
                 buttonColor: Colors.white,

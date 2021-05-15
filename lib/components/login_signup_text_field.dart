@@ -13,7 +13,7 @@ class LoginSignupTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final IconData prefixIcon;
-  final IconData suffixIcon;
+  final IconData? suffixIcon;
 
   @override
   Widget build(BuildContext context) {

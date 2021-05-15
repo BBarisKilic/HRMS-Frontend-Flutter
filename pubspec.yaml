@@ -17,6 +17,7 @@ dependencies:
   sizer: ^2.0.13
   responsive_builder: ^0.4.1
   flutter_svg: ^0.22.0
+  font_awesome_flutter: ^9.0.0
 
 dev_dependencies:
   flutter_test:
