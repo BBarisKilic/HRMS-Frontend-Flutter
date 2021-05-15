@@ -7,6 +7,7 @@ import 'package:hrms_ui/components/welcome_button.dart';
 import 'package:hrms_ui/controllers/login_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
+import 'package:hrms_ui/views/signup/signup_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPagePhone extends StatelessWidget {
@@ -54,7 +55,7 @@ class LoginPagePhone extends StatelessWidget {
               top: GetPlatform.isMobile ? 12.h : 4.h,
               left: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
-                kHumanResourcesIconLocation,
+                kEmploymentIconLocation,
                 width: 22.w,
                 color: kPrimaryDarkColor,
               ),
@@ -159,7 +160,7 @@ class LoginPagePhone extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  "Forgot Password?",
+                  kForgotPassword,
                   style: TextStyle(
                     color: kPrimaryColor,
                     fontWeight: FontWeight.w700,
@@ -210,7 +211,7 @@ class LoginPagePhone extends StatelessWidget {
               Spacer(),
               WelcomeButton(
                 text: kSignUpText,
-                onPressed: () {},
+                onPressed: () => Get.offNamed(SignupPage.id),
                 textColor: Colors.black54,
                 buttonColor: Colors.white,
                 borderColor: Colors.black54,

@@ -6,6 +6,7 @@ import 'package:hrms_ui/components/login_signup_text_field.dart';
 import 'package:hrms_ui/components/welcome_button.dart';
 import 'package:hrms_ui/controllers/signup_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
+import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:hrms_ui/views/signup/signup_page.dart';
 import 'package:sizer/sizer.dart';
 
@@ -170,7 +171,7 @@ class SignupPagePhone extends StatelessWidget {
               Spacer(),
               WelcomeButton(
                 text: kLogInText,
-                onPressed: () {},
+                onPressed: () => Get.offNamed(LoginPage.id),
                 textColor: Colors.black54,
                 buttonColor: Colors.white,
                 borderColor: Colors.black54,

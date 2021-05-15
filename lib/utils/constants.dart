@@ -5,6 +5,7 @@ const String kHumanResourcesIconLocation = "assets/images/human_resources.svg";
 const String kHeadhunterIconLocation = "assets/images/headhunter.svg";
 const String kRecruitmentIconLocation = "assets/images/recruitment.svg";
 const String kEmployeeIconLocation = "assets/images/employee.svg";
+const String kEmploymentIconLocation = "assets/images/employment.svg";
 
 //colors
 const Color kPrimaryColor = const Color(0xff8286F4);
@@ -30,3 +31,4 @@ const String kCompany = "Company";
 const String kCompanyNameText = "Company Name";
 const String kWebsiteText = "Website";
 const String kPhoneText = "Phone";
+const String kForgotPassword = "Forgot Password?";
