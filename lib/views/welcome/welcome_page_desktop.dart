@@ -33,25 +33,58 @@ class WelcomePageDesktop extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 1.h,
-            width: 20.w,
-            margin: const EdgeInsets.symmetric(
-              horizontal: 20.0,
-              vertical: 20.0,
+          buildTextAnimation(
+            size: Size(14.w, 2.h),
+            margin: EdgeInsets.symmetric(
+              vertical: 2.h,
+              horizontal: 4.w,
             ),
-            child: SkeletonAnimation(
-              shimmerColor: Colors.white54,
-              borderRadius: BorderRadius.circular(20.0),
-              shimmerDuration: 1000,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
+            shimmerColor: Colors.white54,
+            boxColor: Colors.grey[300],
+            borderRadius: 20.0,
           ),
+          buildTextAnimation(
+            size: Size(20.w, 1.h),
+            margin: EdgeInsets.symmetric(
+              vertical: 1.h,
+              horizontal: 4.w,
+            ),
+            shimmerColor: Colors.white54,
+            boxColor: Colors.grey[300],
+            borderRadius: 20.0,
+          ),
+          for (int i = 0; i < 6; i++)
+            buildTextAnimation(
+              size: Size(16.w, 1.h),
+              margin: EdgeInsets.symmetric(
+                vertical: 1.h,
+                horizontal: 8.w,
+              ),
+              shimmerColor: Colors.white54,
+              boxColor: Colors.grey[300],
+              borderRadius: 20.0,
+            ),
+          buildTextAnimation(
+            size: Size(20.w, 1.h),
+            margin: EdgeInsets.symmetric(
+              vertical: 1.h,
+              horizontal: 4.w,
+            ),
+            shimmerColor: Colors.white54,
+            boxColor: Colors.grey[300],
+            borderRadius: 20.0,
+          ),
+          for (int i = 0; i < 2; i++)
+            buildTextAnimation(
+              size: Size(16.w, 1.h),
+              margin: EdgeInsets.symmetric(
+                vertical: 1.h,
+                horizontal: 8.w,
+              ),
+              shimmerColor: Colors.white54,
+              boxColor: Colors.grey[300],
+              borderRadius: 20.0,
+            ),
         ],
       ),
     );
@@ -76,6 +109,31 @@ class WelcomePageDesktop extends StatelessWidget {
   Container buildBody() {
     return Container(
       color: kMainBackgroundColor,
+    );
+  }
+
+  Container buildTextAnimation({
+    required Size size,
+    required EdgeInsets margin,
+    required Color shimmerColor,
+    required double borderRadius,
+    Color? boxColor,
+  }) {
+    return Container(
+      height: size.height,
+      width: size.width,
+      margin: margin,
+      child: SkeletonAnimation(
+        shimmerColor: shimmerColor,
+        borderRadius: BorderRadius.circular(borderRadius),
+        shimmerDuration: 1000,
+        child: Container(
+          decoration: BoxDecoration(
+            color: boxColor ?? Colors.grey,
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+        ),
+      ),
     );
   }
 }
