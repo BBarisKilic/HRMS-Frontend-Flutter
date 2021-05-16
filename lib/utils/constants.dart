@@ -10,6 +10,7 @@ const String kEmploymentIconLocation = "assets/images/employment.svg";
 //colors
 const Color kPrimaryColor = const Color(0xff8286F4);
 const Color kPrimaryDarkColor = const Color(0xff4d59c1);
+const Color kMainBackgroundColor = const Color(0xffF5F5FD);
 
 //texts
 const String kAppTitle = "HR Manager";

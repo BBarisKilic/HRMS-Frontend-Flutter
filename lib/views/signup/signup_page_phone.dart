@@ -30,7 +30,7 @@ class SignupPagePhone extends StatelessWidget {
 
   Container buildTopSide() {
     return Container(
-      height: 25.h,
+      height: GetPlatform.isMobile ? 25.h : 20.h,
       width: 100.w,
       color: kPrimaryColor,
       child: Stack(
@@ -88,7 +88,7 @@ class SignupPagePhone extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: SizedBox(
-        height: 75.h,
+        height: GetPlatform.isMobile ? 75.h : 80.h,
         width: 100.w,
         child: SafeArea(
           top: false,
@@ -96,7 +96,7 @@ class SignupPagePhone extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                height: 50.h,
+                height: 60.h,
                 child: DefaultTabController(
                   length: 2,
                   child: Scaffold(
@@ -120,11 +120,18 @@ class SignupPagePhone extends StatelessWidget {
                         ),
                       ],
                     ),
-                    body: TabBarView(
-                      children: [
-                        buildIndividualSignUpForm(),
-                        buildCompanySignUpForm(),
-                      ],
+                    body: SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: 50.h,
+                        ),
+                        child: TabBarView(
+                          children: [
+                            buildIndividualSignUpForm(),
+                            buildCompanySignUpForm(),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
