@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 import 'package:sizer/sizer.dart';
@@ -103,6 +104,30 @@ class WelcomePageDesktop extends StatelessWidget {
   Container buildTopBar() {
     return Container(
       color: kPrimaryColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          for (int i = 0; i < 5; i++)
+            buildTextAnimation(
+              size: Size(18.w, 2.h),
+              margin: EdgeInsets.symmetric(
+                vertical: 2.h,
+                horizontal: 4.w,
+              ),
+              shimmerColor: Colors.black12,
+              boxColor: Colors.white54,
+              borderRadius: 20.0,
+            ),
+          Padding(
+            padding: EdgeInsets.only(right: 4.w),
+            child: Icon(
+              Icons.person_pin,
+              color: Colors.white54,
+              size: 6.w,
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -122,7 +147,7 @@ class WelcomePageDesktop extends StatelessWidget {
     return Container(
       height: size.height,
       width: size.width,
-      margin: margin,
+      margin: margin.copyWith(right: 1.w),
       child: SkeletonAnimation(
         shimmerColor: shimmerColor,
         borderRadius: BorderRadius.circular(borderRadius),
