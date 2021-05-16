@@ -108,24 +108,30 @@ class WelcomePageDesktop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           for (int i = 0; i < 5; i++)
-            buildTextAnimation(
-              size: Size(18.w, 2.h),
-              margin: EdgeInsets.symmetric(
-                vertical: 2.h,
-                horizontal: 4.w,
+            Expanded(
+              flex: 3,
+              child: Row(
+                children: [
+                  Spacer(),
+                  Expanded(
+                    flex: 2,
+                    child: buildTextAnimation(
+                      size: Size(0, 2.h),
+                      shimmerColor: Colors.black12,
+                      boxColor: Colors.white54,
+                      borderRadius: 20.0,
+                    ),
+                  ),
+                ],
               ),
-              shimmerColor: Colors.black12,
-              boxColor: Colors.white54,
-              borderRadius: 20.0,
             ),
-          Padding(
-            padding: EdgeInsets.only(right: 4.w),
-            child: Icon(
-              Icons.person_pin,
-              color: Colors.white54,
-              size: 6.w,
-            ),
-          )
+          Spacer(),
+          Icon(
+            Icons.person_pin,
+            color: Colors.white54,
+            size: 6.w,
+          ),
+          Spacer(),
         ],
       ),
     );
@@ -134,20 +140,75 @@ class WelcomePageDesktop extends StatelessWidget {
   Container buildBody() {
     return Container(
       color: kMainBackgroundColor,
+      child: Column(
+        children: [
+          Spacer(),
+          Expanded(
+            flex: 3,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Spacer(),
+                Expanded(
+                  flex: 4,
+                  child: buildCardAnimation(
+                    shimmerColor: Colors.white54,
+                    borderRadius: 10.0,
+                    boxColor: Color(0xffFFA9D4),
+                  ),
+                ),
+                Spacer(),
+                Expanded(
+                  flex: 4,
+                  child: buildCardAnimation(
+                    shimmerColor: Colors.white54,
+                    borderRadius: 10.0,
+                    boxColor: Color(0xff90DBF4),
+                  ),
+                ),
+                Spacer(),
+                Expanded(
+                  flex: 4,
+                  child: buildCardAnimation(
+                    shimmerColor: Colors.white54,
+                    borderRadius: 10.0,
+                    boxColor: Color(0xffF8A8A7),
+                  ),
+                ),
+                Spacer(),
+                Expanded(
+                  flex: 4,
+                  child: buildCardAnimation(
+                    shimmerColor: Colors.white54,
+                    borderRadius: 10.0,
+                    boxColor: Color(0xffD6A9FE),
+                  ),
+                ),
+                Spacer(),
+              ],
+            ),
+          ),
+          Spacer(),
+          Expanded(
+            flex: 15,
+            child: Container(),
+          ),
+        ],
+      ),
     );
   }
 
   Container buildTextAnimation({
-    required Size size,
-    required EdgeInsets margin,
+    Size? size,
+    EdgeInsets? margin,
     required Color shimmerColor,
     required double borderRadius,
     Color? boxColor,
   }) {
     return Container(
-      height: size.height,
-      width: size.width,
-      margin: margin.copyWith(right: 1.w),
+      height: size?.height,
+      width: size?.width,
+      margin: margin?.copyWith(right: 1.w),
       child: SkeletonAnimation(
         shimmerColor: shimmerColor,
         borderRadius: BorderRadius.circular(borderRadius),
@@ -157,6 +218,24 @@ class WelcomePageDesktop extends StatelessWidget {
             color: boxColor ?? Colors.grey,
             borderRadius: BorderRadius.circular(borderRadius),
           ),
+        ),
+      ),
+    );
+  }
+
+  SkeletonAnimation buildCardAnimation({
+    required Color shimmerColor,
+    required double borderRadius,
+    Color? boxColor,
+  }) {
+    return SkeletonAnimation(
+      shimmerColor: shimmerColor,
+      borderRadius: BorderRadius.circular(borderRadius),
+      shimmerDuration: 1000,
+      child: Container(
+        decoration: BoxDecoration(
+          color: boxColor ?? Colors.grey,
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
       ),
     );
