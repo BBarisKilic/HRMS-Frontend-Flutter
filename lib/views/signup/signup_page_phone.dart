@@ -95,8 +95,8 @@ class SignupPagePhone extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                height: 60.h,
+              Expanded(
+                flex: 40,
                 child: DefaultTabController(
                   length: 2,
                   child: Scaffold(

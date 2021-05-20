@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:sizer/sizer.dart';
 
 class WelcomeButton extends StatelessWidget {
@@ -33,7 +34,7 @@ class WelcomeButton extends StatelessWidget {
         text,
         style: TextStyle(
           color: textColor,
-          fontSize: 12.sp,
+          fontSize: GetPlatform.isMobile ? 12.sp : 6.sp,
           fontWeight: FontWeight.w700,
         ),
       ),

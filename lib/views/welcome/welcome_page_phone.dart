@@ -49,7 +49,7 @@ class WelcomePagePhone extends StatelessWidget {
             child: SvgPicture.asset(
               kHumanResourcesIconLocation,
               width: 80.w,
-              color: const Color(0xff4d59c1),
+              color: kPrimaryDarkColor,
             ),
           );
         },
