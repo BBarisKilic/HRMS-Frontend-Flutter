@@ -16,3 +16,50 @@ See other parts of the HRMS:
 - [HRMS-Frontend-React](https://github.com/BBarisKilic/HRMS-Frontend-React)
 - [HRMS-Backend](https://github.com/BBarisKilic/HRMS-Backend)
 
+## 1. Welcome Page
+
+A page that serves as the starting point of the website/application.
+
+### 1.1. Desktop
+
+<p align="center"><img src="screenshots/welcome_desktop.png" width="720"></p>
+
+### 1.2. Tablet
+
+- coming...
+
+### 1.3. Phone
+
+<p align="center"><img src="screenshots/welcome_phone.png" width="250"></p>
+
+## 2. Login Page
+
+A page where user identification and authentication is performed.
+
+### 2.1. Desktop
+
+- coming...
+
+### 2.2. Tablet
+
+- coming...
+
+### 2.3. Phone
+
+<p align="center"><img src="screenshots/login_phone.png" width="250"></p>
+
+## 3. Signup Page
+
+A page that enables users and organizations to independently register and gain access to system.
+
+### 3.1. Desktop
+
+- coming...
+
+### 3.2. Tablet
+
+- coming...
+
+### 3.3. Phone
+
+<p align="center"><img src="screenshots/signup_phone.png" width="250"></p>
