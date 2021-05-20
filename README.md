@@ -11,3 +11,8 @@ HR Manager follows the Model View Controller (MVC) design pattern and uses the [
 An HRMS, or human resources management system, is a suite of software applications used to manage human resources and related processes throughout the employee lifecycle. For more information, see the [article](https://www.netsuite.com/portal/resource/articles/human-resources/human-resources-management-system-hrms.shtml).
 
 HRMS is consists of two-part: Frontend and Backend. There is one backend yet there are two frontends. Backend has been written solely in [Java Language](https://www.java.com/) and frontends have been used [React](https://reactjs.org/) and [Flutter](https://flutter.dev/).
+
+See other parts of the HRMS:
+- [HRMS-Frontend-React](https://github.com/BBarisKilic/HRMS-Frontend-React)
+- [HRMS-Backend](https://github.com/BBarisKilic/HRMS-Backend)
+
