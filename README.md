@@ -22,11 +22,11 @@ A page that serves as the starting point of the website/application.
 
 ### 1.1. Desktop
 
-<p align="center"><img src="screenshots/welcome_desktop.png" width="720"></p>
+<p align="center"><img src="screenshots/welcome_desktop.png" width="1000"></p>
 
 ### 1.2. Tablet
 
-- coming...
+<p align="center"><img src="screenshots/welcome_tablet.png" width="500"></p>
 
 ### 1.3. Phone
 

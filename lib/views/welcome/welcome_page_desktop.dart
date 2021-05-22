@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:hrms_ui/components/desktop_background.dart';
+import 'package:hrms_ui/components/background.dart';
 import 'package:hrms_ui/components/welcome_button.dart';
 import 'package:hrms_ui/controllers/welcome_page_controller.dart';
 import 'package:hrms_ui/utils/constants.dart';
 import 'package:hrms_ui/views/login/login_page.dart';
 import 'package:hrms_ui/views/signup/signup_page.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:sizer/sizer.dart';
 
 class WelcomePageDesktop extends StatelessWidget {
   final WelcomePageController _welcomePageController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          DesktopBackground(),
+          Background(DeviceScreenType.desktop),
           Center(
             child: Card(
               elevation: 20,
@@ -79,7 +81,7 @@ class WelcomePageDesktop extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Spacer(
+          const Spacer(
             flex: 2,
           ),
           Text(
@@ -90,7 +92,7 @@ class WelcomePageDesktop extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             kDescriptionText,
             style: TextStyle(
@@ -98,7 +100,7 @@ class WelcomePageDesktop extends StatelessWidget {
               fontSize: 6.sp,
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 6,
           ),
           WelcomeButton(
@@ -108,7 +110,7 @@ class WelcomePageDesktop extends StatelessWidget {
             textColor: kPrimaryColor,
             text: kLogInText,
           ),
-          Spacer(
+          const Spacer(
             flex: 2,
           ),
           WelcomeButton(
@@ -118,7 +120,7 @@ class WelcomePageDesktop extends StatelessWidget {
             textColor: Colors.white,
             text: kSignUpText,
           ),
-          Spacer(
+          const Spacer(
             flex: 3,
           ),
         ],

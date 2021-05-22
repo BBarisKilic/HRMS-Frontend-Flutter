@@ -1,26 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:hrms_ui/utils/constants.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:sizer/sizer.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 
-class DesktopBackground extends StatelessWidget {
+class Background extends StatelessWidget {
+  Background(this.deviceScreenType);
+
+  final DeviceScreenType deviceScreenType;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            flex: 1,
-            child: buildLeftPanel(),
-          ),
-          Expanded(
-            flex: 5,
-            child: buildMainPage(),
-          ),
-        ],
-      ),
+      body: deviceScreenType == DeviceScreenType.desktop
+          ? Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: buildLeftPanel(),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: buildMainPage(),
+                ),
+              ],
+            )
+          : buildMainPage(),
     );
   }
 
@@ -108,7 +115,9 @@ class DesktopBackground extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            for (int i = 0; i < 5; i++)
+            for (int i = 0;
+                i < (deviceScreenType == DeviceScreenType.desktop ? 5 : 4);
+                i++)
               Expanded(
                 flex: 3,
                 child: Row(
@@ -137,6 +146,25 @@ class DesktopBackground extends StatelessWidget {
     );
   }
 
+  Expanded coloredBox(Color color, {bool addSpace = false}) {
+    return Expanded(
+      flex: addSpace ? 5 : 4,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 4,
+            child: buildCardAnimation(
+              shimmerColor: Colors.white54,
+              borderRadius: 10.0,
+              boxColor: color,
+            ),
+          ),
+          addSpace ? const Spacer() : const SizedBox(),
+        ],
+      ),
+    );
+  }
+
   Container buildBody() {
     return Container(
       color: kMainBackgroundColor,
@@ -151,41 +179,15 @@ class DesktopBackground extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    flex: 4,
-                    child: buildCardAnimation(
-                      shimmerColor: Colors.white54,
-                      borderRadius: 10.0,
-                      boxColor: Color(0xffFFA9D4),
-                    ),
-                  ),
-                  const Spacer(),
-                  Expanded(
-                    flex: 4,
-                    child: buildCardAnimation(
-                      shimmerColor: Colors.white54,
-                      borderRadius: 10.0,
-                      boxColor: Color(0xff90DBF4),
-                    ),
-                  ),
-                  const Spacer(),
-                  Expanded(
-                    flex: 4,
-                    child: buildCardAnimation(
-                      shimmerColor: Colors.white54,
-                      borderRadius: 10.0,
-                      boxColor: Color(0xffF8A8A7),
-                    ),
-                  ),
-                  const Spacer(),
-                  Expanded(
-                    flex: 4,
-                    child: buildCardAnimation(
-                      shimmerColor: Colors.white54,
-                      borderRadius: 10.0,
-                      boxColor: Color(0xffD6A9FE),
-                    ),
-                  ),
+                  coloredBox(const Color(0xffFFA9D4), addSpace: true),
+                  coloredBox(const Color(0xff90DBF4), addSpace: true),
+                  coloredBox(const Color(0xffF8A8A7),
+                      addSpace: deviceScreenType == DeviceScreenType.desktop
+                          ? true
+                          : false),
+                  deviceScreenType == DeviceScreenType.desktop
+                      ? coloredBox(const Color(0xffD6A9FE))
+                      : const SizedBox(),
                 ],
               ),
             ),
@@ -210,11 +212,15 @@ class DesktopBackground extends StatelessWidget {
                     flex: 8,
                     child: buildSingleCard(),
                   ),
-                  const Spacer(),
-                  Expanded(
-                    flex: 8,
-                    child: buildSingleCard(),
-                  ),
+                  deviceScreenType == DeviceScreenType.desktop
+                      ? const Spacer()
+                      : const SizedBox(),
+                  deviceScreenType == DeviceScreenType.desktop
+                      ? Expanded(
+                          flex: 8,
+                          child: buildSingleCard(),
+                        )
+                      : const SizedBox(),
                 ],
               ),
             ),
@@ -232,11 +238,15 @@ class DesktopBackground extends StatelessWidget {
                     flex: 8,
                     child: buildSingleCard(),
                   ),
-                  const Spacer(),
-                  Expanded(
-                    flex: 8,
-                    child: buildSingleCard(),
-                  ),
+                  deviceScreenType == DeviceScreenType.desktop
+                      ? const Spacer()
+                      : const SizedBox(),
+                  deviceScreenType == DeviceScreenType.desktop
+                      ? Expanded(
+                          flex: 8,
+                          child: buildSingleCard(),
+                        )
+                      : const SizedBox(),
                 ],
               ),
             ),

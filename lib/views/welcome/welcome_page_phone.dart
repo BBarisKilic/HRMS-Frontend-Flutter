@@ -63,7 +63,7 @@ class WelcomePagePhone extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Spacer(
+          const Spacer(
             flex: 2,
           ),
           Text(
@@ -74,7 +74,7 @@ class WelcomePagePhone extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             kDescriptionText,
             style: TextStyle(
@@ -82,7 +82,7 @@ class WelcomePagePhone extends StatelessWidget {
               fontSize: 12.sp,
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 6,
           ),
           WelcomeButton(
@@ -92,7 +92,7 @@ class WelcomePagePhone extends StatelessWidget {
             textColor: kPrimaryColor,
             text: kLogInText,
           ),
-          Spacer(
+          const Spacer(
             flex: 2,
           ),
           WelcomeButton(
@@ -102,7 +102,7 @@ class WelcomePagePhone extends StatelessWidget {
             textColor: Colors.white,
             text: kSignUpText,
           ),
-          Spacer(
+          const Spacer(
             flex: 3,
           ),
         ],

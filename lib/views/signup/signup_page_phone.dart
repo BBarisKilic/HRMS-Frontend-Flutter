@@ -46,7 +46,7 @@ class SignupPagePhone extends StatelessWidget {
                       Icons.arrow_back_ios_rounded,
                       color: Colors.white,
                     )
-                  : SizedBox(),
+                  : const SizedBox(),
             ),
           ),
           Obx(() {
@@ -107,13 +107,13 @@ class SignupPagePhone extends StatelessWidget {
                       labelStyle: TextStyle(fontSize: 12.sp),
                       tabs: [
                         Tab(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.person_pin_sharp,
                           ),
                           text: kIndividualText,
                         ),
                         Tab(
-                          icon: Icon(
+                          icon: const Icon(
                             FontAwesomeIcons.building,
                           ),
                           text: kCompany,
@@ -136,7 +136,7 @@ class SignupPagePhone extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 4,
               ),
               WelcomeButton(
@@ -146,7 +146,7 @@ class SignupPagePhone extends StatelessWidget {
                 buttonColor: kPrimaryColor,
                 borderColor: kPrimaryColor,
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   Expanded(
@@ -175,7 +175,7 @@ class SignupPagePhone extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               WelcomeButton(
                 text: kLogInText,
                 onPressed: () => Get.offNamed(LoginPage.id),
@@ -183,7 +183,7 @@ class SignupPagePhone extends StatelessWidget {
                 buttonColor: Colors.white,
                 borderColor: Colors.black54,
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),
@@ -194,7 +194,7 @@ class SignupPagePhone extends StatelessWidget {
   Column buildIndividualSignUpForm() {
     return Column(
       children: [
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller:
               _signupPageController.emailIndividualTextEditingController,
@@ -202,7 +202,7 @@ class SignupPagePhone extends StatelessWidget {
           suffixIcon: null,
           prefixIcon: Icons.email_rounded,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller:
               _signupPageController.passwordIndividualTextEditingController,
@@ -210,35 +210,35 @@ class SignupPagePhone extends StatelessWidget {
           suffixIcon: Icons.visibility_off_outlined,
           prefixIcon: Icons.lock_rounded,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.firstNameTextEditingController,
           hintText: kFirstNameText,
           suffixIcon: null,
           prefixIcon: Icons.person_outline,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.lastNameTextEditingController,
           hintText: kLastNameText,
           suffixIcon: null,
           prefixIcon: Icons.person,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.nationalIdTextEditingController,
           hintText: kNationalIdText,
           suffixIcon: null,
           prefixIcon: FontAwesomeIcons.idCard,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.yearOfBirthTextEditingController,
           hintText: kYearOfBirthText,
           suffixIcon: null,
           prefixIcon: Icons.date_range_rounded,
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }
@@ -246,14 +246,14 @@ class SignupPagePhone extends StatelessWidget {
   Column buildCompanySignUpForm() {
     return Column(
       children: [
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.emailCompanyTextEditingController,
           hintText: kEmailText,
           suffixIcon: null,
           prefixIcon: Icons.email_rounded,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller:
               _signupPageController.passwordCompanyTextEditingController,
@@ -261,28 +261,28 @@ class SignupPagePhone extends StatelessWidget {
           suffixIcon: Icons.visibility_off_outlined,
           prefixIcon: Icons.lock_rounded,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.companyNameTextEditingController,
           hintText: kCompanyNameText,
           suffixIcon: null,
           prefixIcon: Icons.title,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.websiteTextEditingController,
           hintText: kWebsiteText,
           suffixIcon: null,
           prefixIcon: Icons.web,
         ),
-        Spacer(),
+        const Spacer(),
         LoginSignupTextField(
           controller: _signupPageController.phoneTextEditingController,
           hintText: kPhoneText,
           suffixIcon: null,
           prefixIcon: Icons.phone,
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }
