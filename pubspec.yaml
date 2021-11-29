@@ -1,5 +1,8 @@
 name: hrms_ui
-description: An alternative UI for the "Human Resources Management System" that uses "Flutter Framework" and provides responsive user interfaces and functionality for Web, iOS, and Android. The project has been written solely in Dart Language.
+description: An alternative UI for the "Human Resources Management System" that
+  uses "Flutter Framework" and provides responsive user interfaces and
+  functionality for Web, iOS, and Android. The project has been written solely
+  in Dart Language.
 
 publish_to: 'none'
 
@@ -9,15 +12,14 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2
-  get: ^4.1.4
-  sizer: ^2.0.13
+  flutter_svg: ^0.23.0+1
+  font_awesome_flutter: ^9.2.0
+  get: ^4.5.1
   responsive_builder: ^0.4.1
-  flutter_svg: ^0.22.0
-  font_awesome_flutter: ^9.0.0
+  sizer: ^2.0.15
   skeleton_text: ^3.0.0
 
 dev_dependencies:
@@ -37,4 +39,3 @@ flutter:
         - asset: assets/fonts/NanumGothicCoding-Regular.ttf
         - asset: assets/fonts/NanumGothicCoding-Bold.ttf
           weight: 700
-
