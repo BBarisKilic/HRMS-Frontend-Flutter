@@ -5,7 +5,9 @@ import 'package:hrms_ui/views/home/home_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomePage extends StatelessWidget {
-  static const String id = "/";
+  static const String id = '/';
+
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +15,11 @@ class HomePage extends StatelessWidget {
       builder: (context, sizingInformation) {
         switch (sizingInformation.deviceScreenType) {
           case DeviceScreenType.desktop:
-            return HomePageDesktop();
+            return const HomePageDesktop();
           case DeviceScreenType.tablet:
-            return HomePageTablet();
+            return const HomePageTablet();
           default:
-            return HomePagePhone();
+            return const HomePagePhone();
         }
       },
     );

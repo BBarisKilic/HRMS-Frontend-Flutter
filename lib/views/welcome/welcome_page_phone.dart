@@ -11,6 +11,8 @@ import 'package:sizer/sizer.dart';
 class WelcomePagePhone extends StatelessWidget {
   final WelcomePageController _welcomePageController = Get.find();
 
+  WelcomePagePhone({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

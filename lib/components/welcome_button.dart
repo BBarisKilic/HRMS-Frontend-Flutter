@@ -3,19 +3,20 @@ import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:sizer/sizer.dart';
 
 class WelcomeButton extends StatelessWidget {
-  WelcomeButton({
-    required this.text,
-    required this.onPressed,
-    required this.textColor,
-    required this.buttonColor,
-    required this.borderColor,
-  });
-
   final String text;
   final VoidCallback onPressed;
   final Color textColor;
   final Color buttonColor;
   final Color borderColor;
+
+  const WelcomeButton({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    required this.textColor,
+    required this.buttonColor,
+    required this.borderColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

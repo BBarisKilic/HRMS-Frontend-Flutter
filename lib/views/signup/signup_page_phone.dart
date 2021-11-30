@@ -13,6 +13,8 @@ import 'package:sizer/sizer.dart';
 class SignupPagePhone extends StatelessWidget {
   final SignupPageController _signupPageController = Get.find();
 
+  SignupPagePhone({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +53,7 @@ class SignupPagePhone extends StatelessWidget {
           ),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               top: GetPlatform.isMobile ? 10.h : 2.h,
               left: _signupPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
@@ -66,7 +68,7 @@ class SignupPagePhone extends StatelessWidget {
           }),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               top: GetPlatform.isMobile ? 16.h : 8.h,
               right: _signupPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
@@ -105,15 +107,15 @@ class SignupPagePhone extends StatelessWidget {
                       labelColor: kPrimaryColor,
                       unselectedLabelColor: Colors.black54,
                       labelStyle: TextStyle(fontSize: 12.sp),
-                      tabs: [
+                      tabs: const [
                         Tab(
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.person_pin_sharp,
                           ),
                           text: kIndividualText,
                         ),
                         Tab(
-                          icon: const Icon(
+                          icon: Icon(
                             FontAwesomeIcons.building,
                           ),
                           text: kCompany,
@@ -158,7 +160,7 @@ class SignupPagePhone extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      "or",
+                      'or',
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 12.sp,

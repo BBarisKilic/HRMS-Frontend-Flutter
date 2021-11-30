@@ -8,10 +8,12 @@ import 'package:hrms_ui/views/welcome/welcome_page.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
-  runApp(HRMSApp());
+  runApp(const HRMSApp());
 }
 
 class HRMSApp extends StatelessWidget {
+  const HRMSApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, _, __) {
@@ -26,27 +28,27 @@ class HRMSApp extends StatelessWidget {
         getPages: [
           GetPage(
             name: HomePage.id,
-            page: () => HomePage(),
+            page: () => const HomePage(),
             transition: Transition.fadeIn,
-            transitionDuration: Duration(milliseconds: 500),
+            transitionDuration: const Duration(milliseconds: 500),
           ),
           GetPage(
             name: WelcomePage.id,
             page: () => WelcomePage(),
             transition: Transition.fadeIn,
-            transitionDuration: Duration(milliseconds: 500),
+            transitionDuration: const Duration(milliseconds: 500),
           ),
           GetPage(
             name: LoginPage.id,
             page: () => LoginPage(),
             transition: Transition.fadeIn,
-            transitionDuration: Duration(milliseconds: 500),
+            transitionDuration: const Duration(milliseconds: 500),
           ),
           GetPage(
             name: SignupPage.id,
             page: () => SignupPage(),
             transition: Transition.fadeIn,
-            transitionDuration: Duration(milliseconds: 500),
+            transitionDuration: const Duration(milliseconds: 500),
           ),
         ],
         initialRoute: WelcomePage.id,

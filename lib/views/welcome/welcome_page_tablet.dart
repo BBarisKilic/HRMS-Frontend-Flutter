@@ -13,17 +13,19 @@ import 'package:sizer/sizer.dart';
 class WelcomePageTablet extends StatelessWidget {
   final WelcomePageController _welcomePageController = Get.find();
 
+  WelcomePageTablet({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          Background(DeviceScreenType.tablet),
+          const Background(deviceScreenType: DeviceScreenType.tablet),
           Center(
             child: Card(
               elevation: 20,
-              shape: RoundedRectangleBorder(
-                borderRadius: const BorderRadius.all(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
                   Radius.circular(8.0),
                 ),
               ),

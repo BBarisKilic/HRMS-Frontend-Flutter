@@ -2,18 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SignupPageController extends GetxController {
-  var _didAnimationStart = false.obs;
-  var _emailIndividualTextEditingController = TextEditingController();
-  var _passwordIndividualTextEditingController = TextEditingController();
-  var _firstNameTextEditingController = TextEditingController();
-  var _lastNameTextEditingController = TextEditingController();
-  var _nationalIdTextEditingController = TextEditingController();
-  var _yearOfBirthTextEditingController = TextEditingController();
-  var _emailCompanyTextEditingController = TextEditingController();
-  var _passwordCompanyTextEditingController = TextEditingController();
-  var _companyNameTextEditingController = TextEditingController();
-  var _websiteTextEditingController = TextEditingController();
-  var _phoneTextEditingController = TextEditingController();
+  final _didAnimationStart = false.obs;
+  final _emailIndividualTextEditingController = TextEditingController();
+  final _passwordIndividualTextEditingController = TextEditingController();
+  final _firstNameTextEditingController = TextEditingController();
+  final _lastNameTextEditingController = TextEditingController();
+  final _nationalIdTextEditingController = TextEditingController();
+  final _yearOfBirthTextEditingController = TextEditingController();
+  final _emailCompanyTextEditingController = TextEditingController();
+  final _passwordCompanyTextEditingController = TextEditingController();
+  final _companyNameTextEditingController = TextEditingController();
+  final _websiteTextEditingController = TextEditingController();
+  final _phoneTextEditingController = TextEditingController();
 
   get didAnimationStart => _didAnimationStart.value;
   get emailIndividualTextEditingController =>
@@ -32,7 +32,7 @@ class SignupPageController extends GetxController {
   get phoneTextEditingController => _phoneTextEditingController;
 
   void startAnimation() async {
-    Future.delayed(Duration(milliseconds: 250), () {
+    Future.delayed(const Duration(milliseconds: 250), () {
       _didAnimationStart.value = true;
     });
   }

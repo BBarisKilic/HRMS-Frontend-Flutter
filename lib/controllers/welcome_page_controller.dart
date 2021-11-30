@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class WelcomePageController extends GetxController {
-  var _isImageVisible = false.obs;
+  final _isImageVisible = false.obs;
 
   bool get isImageVisible => _isImageVisible.value;
 

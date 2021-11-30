@@ -5,9 +5,10 @@ import 'package:sizer/sizer.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 
 class Background extends StatelessWidget {
-  Background(this.deviceScreenType);
-
   final DeviceScreenType deviceScreenType;
+
+  const Background({Key? key, required this.deviceScreenType})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class Background extends StatelessWidget {
 
   Container buildLeftPanel() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(topRight: Radius.circular(80.0)),
         color: Colors.white,
       ),
@@ -303,7 +304,7 @@ class Background extends StatelessWidget {
   Container buildSingleCard() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 2.w),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         color: Colors.white,
       ),
@@ -311,7 +312,7 @@ class Background extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Spacer(),
-          Expanded(
+          const Expanded(
             flex: 2,
             child: Icon(
               Icons.person_outline,

@@ -13,6 +13,8 @@ import 'package:sizer/sizer.dart';
 class LoginPagePhone extends StatelessWidget {
   final LoginPageController _loginPageController = Get.find();
 
+  LoginPagePhone({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,12 +48,12 @@ class LoginPagePhone extends StatelessWidget {
                       Icons.arrow_back_ios_rounded,
                       color: Colors.white,
                     )
-                  : SizedBox(),
+                  : const SizedBox(),
             ),
           ),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               top: GetPlatform.isMobile ? 12.h : 4.h,
               left: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
@@ -63,7 +65,7 @@ class LoginPagePhone extends StatelessWidget {
           }),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               top: GetPlatform.isMobile ? 16.h : 8.h,
               right: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
@@ -75,7 +77,7 @@ class LoginPagePhone extends StatelessWidget {
           }),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               top: GetPlatform.isMobile ? 28.h : 24.h,
               left: _loginPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
@@ -90,7 +92,7 @@ class LoginPagePhone extends StatelessWidget {
           }),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               top: GetPlatform.isMobile ? 34.h : 30.h,
               right: _loginPageController.didAnimationStart ? 30.w : -20.w,
               child: Text(
@@ -105,7 +107,7 @@ class LoginPagePhone extends StatelessWidget {
           }),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               bottom: 9.h,
               left: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
@@ -117,7 +119,7 @@ class LoginPagePhone extends StatelessWidget {
           }),
           Obx(() {
             return AnimatedPositioned(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               bottom: 5.h,
               right: _loginPageController.didAnimationStart ? 10.w : -20.w,
               child: SvgPicture.asset(
@@ -149,14 +151,14 @@ class LoginPagePhone extends StatelessWidget {
                 suffixIcon: Icons.done,
                 prefixIcon: Icons.email_rounded,
               ),
-              Spacer(),
+              const Spacer(),
               LoginSignupTextField(
                 controller: _loginPageController.passwordTextEditingController,
                 hintText: kPasswordText,
                 suffixIcon: Icons.visibility_off_outlined,
                 prefixIcon: Icons.lock_rounded,
               ),
-              Spacer(),
+              const Spacer(),
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
@@ -169,7 +171,7 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 4,
               ),
               WelcomeButton(
@@ -179,7 +181,7 @@ class LoginPagePhone extends StatelessWidget {
                 buttonColor: kPrimaryColor,
                 borderColor: kPrimaryColor,
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   Expanded(
@@ -191,7 +193,7 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      "or",
+                      'or',
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 12.sp,
@@ -208,7 +210,7 @@ class LoginPagePhone extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               WelcomeButton(
                 text: kSignUpText,
                 onPressed: () => Get.offNamed(SignupPage.id),
@@ -216,7 +218,7 @@ class LoginPagePhone extends StatelessWidget {
                 buttonColor: Colors.white,
                 borderColor: Colors.black54,
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

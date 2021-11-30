@@ -7,9 +7,11 @@ import 'package:hrms_ui/views/login/login_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class LoginPage extends StatelessWidget {
-  static const String id = "/login";
+  static const String id = '/login';
 
   final _loginPageController = Get.put(LoginPageController());
+
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +26,9 @@ class LoginPage extends StatelessWidget {
         builder: (context, sizingInformation) {
           switch (sizingInformation.deviceScreenType) {
             case DeviceScreenType.desktop:
-              return LoginPageDesktop();
+              return const LoginPageDesktop();
             case DeviceScreenType.tablet:
-              return LoginPageTablet();
+              return const LoginPageTablet();
             default:
               return LoginPagePhone();
           }

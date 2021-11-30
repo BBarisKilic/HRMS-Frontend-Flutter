@@ -3,17 +3,18 @@ import 'package:hrms_ui/utils/constants.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginSignupTextField extends StatelessWidget {
-  LoginSignupTextField({
-    required this.controller,
-    required this.hintText,
-    required this.prefixIcon,
-    required this.suffixIcon,
-  });
-
   final TextEditingController controller;
   final String hintText;
   final IconData prefixIcon;
   final IconData? suffixIcon;
+
+  const LoginSignupTextField(
+      {Key? key,
+      required this.controller,
+      required this.hintText,
+      required this.prefixIcon,
+      this.suffixIcon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +38,10 @@ class LoginSignupTextField extends StatelessWidget {
           suffixIcon,
         ),
         enabledBorder: const UnderlineInputBorder(
-          borderSide: const BorderSide(width: 0.0),
+          borderSide: BorderSide(width: 0.0),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: const BorderSide(width: 0.0),
+          borderSide: BorderSide(width: 0.0),
         ),
       ),
     );

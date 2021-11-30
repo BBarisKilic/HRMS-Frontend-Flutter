@@ -3,11 +3,13 @@ import 'package:hrms_ui/components/background.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class SignupPageDesktop extends StatelessWidget {
+  const SignupPageDesktop({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
-        Background(DeviceScreenType.desktop),
+      children: const [
+        Background(deviceScreenType: DeviceScreenType.desktop),
       ],
     );
   }

@@ -7,9 +7,13 @@ import 'package:hrms_ui/views/signup/signup_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class SignupPage extends StatelessWidget {
-  static const String id = "/signup";
+  static const String id = '/signup';
 
-  final _signupPageController = Get.put(SignupPageController());
+  late final SignupPageController _signupPageController;
+
+  SignupPage({Key? key}) : super(key: key) {
+    _signupPageController = Get.put(SignupPageController());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +28,9 @@ class SignupPage extends StatelessWidget {
         builder: (context, sizingInformation) {
           switch (sizingInformation.deviceScreenType) {
             case DeviceScreenType.desktop:
-              return SignupPageDesktop();
+              return const SignupPageDesktop();
             case DeviceScreenType.tablet:
-              return SignupPageTablet();
+              return const SignupPageTablet();
             default:
               return SignupPagePhone();
           }
