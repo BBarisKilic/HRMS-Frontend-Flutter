@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hrms_ui/utils/constants.dart';
+import '../utils/constants.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginSignupTextField extends StatelessWidget {

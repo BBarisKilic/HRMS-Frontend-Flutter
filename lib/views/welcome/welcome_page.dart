@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms_ui/controllers/welcome_page_controller.dart';
-import 'package:hrms_ui/views/welcome/welcome_page_desktop.dart';
-import 'package:hrms_ui/views/welcome/welcome_page_phone.dart';
-import 'package:hrms_ui/views/welcome/welcome_page_tablet.dart';
+import '../../controllers/welcome_page_controller.dart';
+import 'welcome_page_desktop.dart';
+import 'welcome_page_phone.dart';
+import 'welcome_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class WelcomePage extends StatelessWidget {

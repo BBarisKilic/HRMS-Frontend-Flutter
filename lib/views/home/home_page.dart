@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hrms_ui/views/home/home_page_desktop.dart';
-import 'package:hrms_ui/views/home/home_page_phone.dart';
-import 'package:hrms_ui/views/home/home_page_tablet.dart';
+import 'home_page_desktop.dart';
+import 'home_page_phone.dart';
+import 'home_page_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomePage extends StatelessWidget {

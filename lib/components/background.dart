@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hrms_ui/utils/constants.dart';
+import '../utils/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:sizer/sizer.dart';
 import 'package:skeleton_text/skeleton_text.dart';

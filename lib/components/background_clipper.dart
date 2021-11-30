@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hrms_ui/views/login/login_page.dart';
-import 'package:hrms_ui/views/signup/signup_page.dart';
+import '../views/login/login_page.dart';
+import '../views/signup/signup_page.dart';
 
 class BackgroundClipper extends CustomClipper<Path> {
   BackgroundClipper(this.routeId);

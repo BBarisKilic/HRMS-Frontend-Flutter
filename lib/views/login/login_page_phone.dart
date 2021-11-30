@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:hrms_ui/components/background_clipper.dart';
-import 'package:hrms_ui/components/login_signup_text_field.dart';
-import 'package:hrms_ui/components/welcome_button.dart';
-import 'package:hrms_ui/controllers/login_page_controller.dart';
-import 'package:hrms_ui/utils/constants.dart';
-import 'package:hrms_ui/views/login/login_page.dart';
-import 'package:hrms_ui/views/signup/signup_page.dart';
+import '../../components/background_clipper.dart';
+import '../../components/login_signup_text_field.dart';
+import '../../components/welcome_button.dart';
+import '../../controllers/login_page_controller.dart';
+import '../../utils/constants.dart';
+import 'login_page.dart';
+import '../signup/signup_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPagePhone extends StatelessWidget {

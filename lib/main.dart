@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms_ui/utils/constants.dart';
-import 'package:hrms_ui/views/home/home_page.dart';
-import 'package:hrms_ui/views/login/login_page.dart';
-import 'package:hrms_ui/views/signup/signup_page.dart';
-import 'package:hrms_ui/views/welcome/welcome_page.dart';
+import 'utils/constants.dart';
+import 'views/home/home_page.dart';
+import 'views/login/login_page.dart';
+import 'views/signup/signup_page.dart';
+import 'views/welcome/welcome_page.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
